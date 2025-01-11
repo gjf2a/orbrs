@@ -137,7 +137,7 @@ pub fn brief(blurred_img: &GrayImage, vec: &Vec<FastKeypoint>, brief_length: Opt
 //
 
 pub fn orb(img: &DynamicImage, n:usize) -> Result<Vec<Brief>, ImageError> {
-    let gray_img = img.to_luma();
+    let gray_img = img.to_luma8();
     
     let mut keypoints:Vec<FastKeypoint> = fast::fast(&gray_img, None, None)?;
 
